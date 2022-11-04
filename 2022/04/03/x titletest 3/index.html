@@ -27,14 +27,14 @@
 <meta property="og:site_name" content="喵">
 <meta property="og:description" content="图论问题的最基本的算法模板,综合应用和扩展应用博主一般是写题解，实在没时间写博客(太菜了qaq)">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/pictures/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20221104113200.jpg">
-<meta property="og:image" content="http://example.com/pictures/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20221104191554.jpg">
-<meta property="og:image" content="http://example.com/pictures/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20221104194207.jpg">
+<meta property="og:image" content="http://example.com/images/x%20titletest%203/1.jpg">
+<meta property="og:image" content="http://example.com/images/x%20titletest%203/2.jpg">
+<meta property="og:image" content="http://example.com/images/x%20titletest%203/3.jpg">
 <meta property="article:published_time" content="2022-04-02T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-11-04T13:39:46.541Z">
+<meta property="article:modified_time" content="2022-11-04T13:48:17.254Z">
 <meta property="article:author" content="GONG">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/pictures/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20221104113200.jpg">
+<meta name="twitter:image" content="http://example.com/images/x%20titletest%203/1.jpg">
 
 <link rel="canonical" href="http://example.com/2022/04/03/x%20titletest%203/">
 
@@ -184,7 +184,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-04 21:39:46" itemprop="dateModified" datetime="2022-11-04T21:39:46+08:00">2022-11-04</time>
+                <time title="Modified: 2022-11-04 21:48:17" itemprop="dateModified" datetime="2022-11-04T21:48:17+08:00">2022-11-04</time>
               </span>
 
           
@@ -213,7 +213,7 @@
 
 <p>两种算法不能说谁一定比谁好，例如在处理稠密图的时候堆优化效率不如朴素版dijkstra，因为看代码可知，每更新一个点（一条边），就将更新的点插入堆中，那么当一个点被多次更新的时候，堆中会堆积多个点（但堆是按距离排好序，只会对最小距离的点做松弛操作，所以保证了正确性），但对于稠密图（很多边）频繁的push，pop操作会使算法性能下降，具体使用哪个算法请依据实际情况而定</p>
 <p>前面说过，dijkstra基于贪心思想，注定目光短浅，也是它不能处理一些带负权边的图</p>
-<p><img src="/pictures/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20221104113200.jpg" alt="img"></p>
+<p><img src="/images/x%20titletest%203/1.jpg" alt="img"></p>
 <p>如图，尝试分析</p>
 <p>因此我们需要新的算法处理带负权边图</p>
 <h3 id="bellman-ford-O-nm"><a href="#bellman-ford-O-nm" class="headerlink" title="bellman-ford  O(nm)"></a>bellman-ford  O(nm)</h3><p>利用dp思想，这个算法类似于从起点开始扩散，i循环控制扩散的边数限制，每次i循环一次都会遍历所有边，利用扩散和三角不等式更新所有边，适合求有边数限制的最短路(改i循环的次数)，最多n-1次迭代会得到所有点的最小值，可以求带负权边的最短路</p>
@@ -228,7 +228,7 @@
 
 
 <h2 id="多源最短路"><a href="#多源最短路" class="headerlink" title="多源最短路"></a>多源最短路</h2><h3 id="floyd-O-n-3"><a href="#floyd-O-n-3" class="headerlink" title="floyd  O(n ^ 3)"></a>floyd  O(n ^ 3)</h3><p>多源最短路通用算法，利用dp思想</p>
-<p><img src="/pictures/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20221104191554.jpg" alt="img"></p>
+<p><img src="/images/x%20titletest%203/2.jpg" alt="img"></p>
 <p>同时，我们假定k就是j，我们发现k的状态与k-1是一致的，那么我们可以消掉第一维k</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">void init()</span><br><span class="line">&#123;</span><br><span class="line">    for(int i = 1;i &lt;= n;i++)</span><br><span class="line">            for(int j = 1;j &lt;= n;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                if(i == j) d[i][j] = 0;</span><br><span class="line">                else d[i][j] = INF;</span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br><span class="line">void floyd()</span><br><span class="line">&#123;</span><br><span class="line">	for(int k = 1;k &lt;= n;k++)</span><br><span class="line">        for(int i = 1;i &lt;= n;i++)</span><br><span class="line">            for(int j = 1;j &lt;= n;j++)</span><br><span class="line">                d[i][j] = min(d[i][j], d[i][k] + d[k][j]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -251,7 +251,7 @@
 <p>证明其正确性可用反证法，如果某一最短路径等于n条边，那么如果不存在环的话就一定会有n+1个点，但我们只有n个点，根据抽屉原理，必然有点重复，即必然存在环，与假设矛盾</p>
 <p>再谈谈为什么第二种方法优于第一种方法</p>
 <p>如图</p>
-<p><img src="/pictures/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20221104194207.jpg" alt="img"></p>
+<p><img src="/images/x%20titletest%203/3.jpg" alt="img"></p>
 <p>如果是单纯判断负环的话，可以将spfa的队列换成手写栈，防止tle，但是求最短路的时候千万不要把队列换栈，效率极低</p>
 <p>原因：spfa每个点出一次队列就更新一次，并作为新的点去更新其他点，每个点可能多次入队出队，于是当前面的点陆续出队时，后面的点也不断在被更新，等到后面的点出队时已经处于较新的状态，而栈每更新一次就出一次，导致大量点被积压在栈内无法弹出，容易堆积，所以用栈判断负环更快</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">//本题是二分+负环判断</span><br><span class="line">bool check(double mid)</span><br><span class="line">&#123;</span><br><span class="line">    int hh = 0, tt = 0;</span><br><span class="line">    memset(st, 0, sizeof st);</span><br><span class="line">    memset(cnt, 0, sizeof cnt);</span><br><span class="line">    for(int i = 0;i &lt; 676;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        q[tt++] = i;</span><br><span class="line">        st[i] = true;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    int count = 0;</span><br><span class="line">    while(hh != tt)</span><br><span class="line">    &#123;</span><br><span class="line">        int t = q[--tt];//换成栈更快</span><br><span class="line">        //if(hh == N) hh = 0;</span><br><span class="line">        st[t] = false;</span><br><span class="line"></span><br><span class="line">        for(int i = h[t]; ~i;i = ne[i])</span><br><span class="line">        &#123;</span><br><span class="line">            int j = e[i];</span><br><span class="line">            if(d[j] &lt; d[t] + w[i] - mid)</span><br><span class="line">            &#123;</span><br><span class="line">                d[j] = d[t] + w[i] - mid;</span><br><span class="line">                cnt[j] = cnt[t] + 1;</span><br><span class="line">                if(cnt[j] &gt;= N) return true;</span><br><span class="line">                //if(++count &gt; 10000) return true;</span><br><span class="line">                if(!st[j])</span><br><span class="line">                &#123;</span><br><span class="line">                    q[tt++] = j;</span><br><span class="line">                    //if(tt == N) tt = 0;</span><br><span class="line">                    st[j] = true;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
