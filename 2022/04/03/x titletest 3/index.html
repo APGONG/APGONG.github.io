@@ -28,9 +28,8 @@
 <meta property="og:description" content="解决图论的单源最短路问题">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-02T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-11-04T01:07:32.977Z">
+<meta property="article:modified_time" content="2022-11-04T01:29:39.189Z">
 <meta property="article:author" content="GONG">
-<meta property="article:tag" content="-dijkstra -bellman-ford -spfa">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://example.com/2022/04/03/x%20titletest%203/">
@@ -86,7 +85,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="تشغيل شريط التصفح">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -120,7 +119,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>الأرشيفات</a>
 
   </li>
   </ul>
@@ -172,22 +171,22 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">نُشر في</span>
 
-              <time title="Created: 2022-04-03 00:00:00" itemprop="dateCreated datePublished" datetime="2022-04-03T00:00:00+08:00">2022-04-03</time>
+              <time title="أُنشأ: 2022-04-03 00:00:00" itemprop="dateCreated datePublished" datetime="2022-04-03T00:00:00+08:00">2022-04-03</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-04 09:07:32" itemprop="dateModified" datetime="2022-11-04T09:07:32+08:00">2022-11-04</time>
+                <span class="post-meta-item-text">عُدل في</span>
+                <time title="عُدل: 2022-11-04 09:29:39" itemprop="dateModified" datetime="2022-11-04T09:29:39+08:00">2022-11-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">في</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E5%8D%95%E6%BA%90%E6%9C%80%E7%9F%AD%E8%B7%AF/" itemprop="url" rel="index"><span itemprop="name">-单源最短路</span></a>
                 </span>
@@ -205,7 +204,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>get one way 会出现吗</p>
+        <h3 id="dijkstra"><a href="#dijkstra" class="headerlink" title="dijkstra"></a>dijkstra</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void dijkstra()</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="bellman-ford"><a href="#bellman-ford" class="headerlink" title="bellman-ford"></a>bellman-ford</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void bellmanFord()</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="spfa"><a href="#spfa" class="headerlink" title="spfa"></a>spfa</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void spfa()</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 
     </div>
 
@@ -214,9 +226,6 @@
     
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/dijkstra-bellman-ford-spfa/" rel="tag"># -dijkstra -bellman-ford -spfa</a>
-          </div>
 
         
 
@@ -277,15 +286,16 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          المحتويات
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          عام
         </li>
       </ul>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#dijkstra"><span class="nav-number">1.</span> <span class="nav-text">dijkstra</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bellman-ford"><span class="nav-number">2.</span> <span class="nav-text">bellman-ford</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spfa"><span class="nav-number">3.</span> <span class="nav-text">spfa</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -300,16 +310,16 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">3</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-name">المقالات</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
         <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">categories</span>
+        <span class="site-state-item-name">التصنيفات</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">tags</span>
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">الوسوم</span>
       </div>
   </nav>
 </div>
@@ -341,7 +351,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">GONG</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  <div class="powered-by">تطبيق الموقع <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
 
         
