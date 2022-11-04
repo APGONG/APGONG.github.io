@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="c:\Users\86187\Pictures\blog\%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20221104113200.jpg">
 <meta property="article:published_time" content="2022-04-02T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-11-04T03:43:17.520Z">
+<meta property="article:modified_time" content="2022-11-04T03:53:41.360Z">
 <meta property="article:author" content="GONG">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="c:\Users\86187\Pictures\blog\%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20221104113200.jpg">
@@ -182,7 +182,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-04 11:43:17" itemprop="dateModified" datetime="2022-11-04T11:43:17+08:00">2022-11-04</time>
+                <time title="Modified: 2022-11-04 11:53:41" itemprop="dateModified" datetime="2022-11-04T11:53:41+08:00">2022-11-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -218,7 +218,7 @@
 
 <p>两种算法不能说谁一定比谁好，例如在处理稠密图的时候堆优化效率不如朴素版dijkstra，因为看代码可知，每更新一个点（一条边），就将更新的点插入堆中，那么当一个点被多次更新的时候，堆中会堆积多个点（但堆是按距离排好序，只会对最小距离的点做松弛操作，所以保证了正确性），但对于稠密图（很多边）频繁的push，pop操作会使算法性能下降，具体使用哪个算法请依据实际情况而定</p>
 <p>前面说过，dijkstra基于贪心思想，注定目光短浅，也是它不能处理一些带负权边的图</p>
-<p><img src="C:\Users\86187\Pictures\blog\微信图片_20221104113200.jpg" alt="微信图片_20221104113200"></p>
+<p><img src="C:\Users\86187\Pictures\blog\微信图片_20221104113200.jpg" alt="Alt text"></p>
 <p>如图，尝试分析</p>
 <p>因此我们需要新的算法处理带负权边图</p>
 <h3 id="bellman-ford"><a href="#bellman-ford" class="headerlink" title="bellman-ford"></a>bellman-ford</h3><p>bellmanford算法可以处理</p>
