@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="数论基本问题模板">
+<meta property="og:type" content="article">
+<meta property="og:title" content="0x30数论">
+<meta property="og:url" content="http://example.com/2022/11/05/x%20math/index.html">
+<meta property="og:site_name" content="喵">
+<meta property="og:description" content="数论基本问题模板">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/x%20math/4.jpg">
+<meta property="og:image" content="http://example.com/images/x%20math/5.png">
+<meta property="og:image" content="http://example.com/images/x%20math/6.jpg">
+<meta property="og:image" content="http://example.com/images/x%20math/7.jpg">
+<meta property="og:image" content="http://example.com/images/x%20math/8.jpg">
+<meta property="og:image" content="http://example.com/images/x%20math/niyuan.png">
+<meta property="og:image" content="http://example.com/images/x%20math/9.jpg">
+<meta property="og:image" content="http://example.com/images/x%20math/10.jpg">
+<meta property="og:image" content="http://example.com/images/x%20math/11.jpg">
+<meta property="og:image" content="http://example.com/images/x%20math/gameTheory.png">
+<meta property="article:published_time" content="2022-11-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-11-06T09:19:18.064Z">
+<meta property="article:author" content="GONG">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/x%20math/4.jpg">
+
+<link rel="canonical" href="http://example.com/2022/11/05/x%20math/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>0x30数论 | 喵</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">喵</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/05/x%20math/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="GONG">
+      <meta itemprop="description" content="时光流转，愿你与珍重之人重逢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="喵">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          0x30数论
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-11-05 00:00:00" itemprop="dateCreated datePublished" datetime="2022-11-05T00:00:00+08:00">2022-11-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-06 17:19:18" itemprop="dateModified" datetime="2022-11-06T17:19:18+08:00">2022-11-06</time>
+              </span>
+
+          
+            <div class="post-description">数论基本问题模板</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>若a % b &#x3D;&#x3D; 0，记作b|a，读作b整除a ,称b为a的约数，a为b的倍数,0可以被任何数整除</p>
+<p><u>算术基本定理：一个正整数N可以被唯一分解为N&#x3D;p1^c1^ * p2^c2 ^ … pm^cm, ci均为正整数，pi都是质数</u></p>
+<p>a ≡ b(mod p)    &#x3D;&#x3D;&gt;   a mod p &#x3D;&#x3D;  b</p>
+<h2 id="筛质数-（暴力枚举不作讨论）"><a href="#筛质数-（暴力枚举不作讨论）" class="headerlink" title="筛质数   （暴力枚举不作讨论）"></a>筛质数   （暴力枚举不作讨论）</h2><h3 id="埃氏筛-O-nloglogn-已经及其接近线性"><a href="#埃氏筛-O-nloglogn-已经及其接近线性" class="headerlink" title="埃氏筛  O(nloglogn) 已经及其接近线性"></a>埃氏筛  O(nloglogn) 已经及其接近线性</h3><p>每探查一个数就把它的倍数全部筛掉，思路简单，但缺点是一个数可能被多次筛选，例如6会被2和3筛</p>
+<p>时间复杂度证明可以使用Mertens第二定理</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void p(int n)</span><br><span class="line">&#123;</span><br><span class="line">    for(int i = 2;i &lt;= n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(!st[i])</span><br><span class="line">            prime[cnt++] = i;</span><br><span class="line">        for(int j = i + i;j &lt;= n;j += i) st[j] = 1;//埃氏筛法</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="线性筛-O-n"><a href="#线性筛-O-n" class="headerlink" title="线性筛  O(n)"></a>线性筛  O(n)</h3><p>相较于埃氏筛的优点是每个数只会筛掉离它最近的一个倍数而非它的全部倍数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">void p(int n)</span><br><span class="line">&#123;</span><br><span class="line">    for(int i = 2;i &lt;= n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(!st[i])</span><br><span class="line">            prime[cnt++] = i;</span><br><span class="line">        for(int j = 0;prime[j] &lt;= n / i;j++)//线性筛,n只会被它的最小质因子筛掉</span><br><span class="line">        &#123;</span><br><span class="line">            st[prime[j] * i] = 1; </span><br><span class="line">            if(i % prime[j] == 0) break;//从小到大枚举，那primes[j]一定是i的最小质因子</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="约数"><a href="#约数" class="headerlink" title="约数"></a>约数</h2><h3 id="试除法求所有约数"><a href="#试除法求所有约数" class="headerlink" title="试除法求所有约数"></a>试除法求所有约数</h3><p>枚举&lt;&#x3D;n的数，如果是n的约数同时不重复，就将i与n&#x2F;i一起存下来</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void getP(int n)</span><br><span class="line">&#123;</span><br><span class="line">    for(int i = 1;i &lt;= n / i;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(n % i == 0) </span><br><span class="line">        &#123;</span><br><span class="line">            res.push_back(i);//例如 n = 9， 一轮可加入1和9</span><br><span class="line">            if(n / i != i) res.push_back(n / i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(res.begin(), res.end());//乱序，可以排个序</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="求约数个数"><a href="#求约数个数" class="headerlink" title="求约数个数"></a>求约数个数</h3><p>由算术基本定理可知，一个数的约数个数为(c1 + 1)<em>(c2 + 1)</em>…*(cm + 1)</p>
+<p>类似于组合数的选取</p>
+<p>于是我们可以在输入数字的时候用试除法把它分割为算术基本定理拆分形式，用哈希表存底数和质数，接下来我们只需遍历哈希表就可以得到约数个数了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    unordered_map&lt;int, int&gt; hash;</span><br><span class="line"></span><br><span class="line">    int x;</span><br><span class="line">    cin &gt;&gt; x;</span><br><span class="line">    for(int i = 2;i &lt;= x / i;i++)//还有最后的质因子</span><br><span class="line">    &#123;</span><br><span class="line">    	while(x % i == 0)</span><br><span class="line">    	&#123;</span><br><span class="line">    		x /= i;</span><br><span class="line">    		hash[i] ++;</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if(x != 1) hash[x] ++;//最后余下的质因子</span><br><span class="line">    LL res = 1;</span><br><span class="line">    for(auto t : hash) res = (res * (t.second + 1)) % MOD;</span><br><span class="line">    cout &lt;&lt; res;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="求约数之和"><a href="#求约数之和" class="headerlink" title="求约数之和"></a>求约数之和</h3><p>(p1^0 + … + p1^cm) * … *(pm^0 + … + pm^cm)</p>
+<p>实际上就是借助求约数个数的思想(选与不选)，展开其实就是所有约数的和</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    unordered_map&lt;int ,int&gt; hash;</span><br><span class="line">    while(n -- )</span><br><span class="line">    &#123;</span><br><span class="line">        int x;</span><br><span class="line">        cin &gt;&gt; x;</span><br><span class="line">        for(int i = 2;i &lt;= x / i;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            while(x % i == 0) </span><br><span class="line">            &#123;</span><br><span class="line">                x /= i;</span><br><span class="line">                hash[i] ++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(x != 1) hash[x] ++;</span><br><span class="line">    &#125;</span><br><span class="line">    LL res = 1;</span><br><span class="line">    for(auto t : hash)</span><br><span class="line">    &#123;</span><br><span class="line">        LL tt = 1;</span><br><span class="line">        int p = t.first, a = t.second;</span><br><span class="line">        while(a --)</span><br><span class="line">            tt = (tt * p + 1) % MOD;//多项式通用写法(p1^0 + ... + p1^cm)</span><br><span class="line">        res = res * tt % MOD;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="最大公约数-gcd"><a href="#最大公约数-gcd" class="headerlink" title="最大公约数  gcd"></a>最大公约数  gcd</h3><p>写法有很多，这里只介绍辗转相除法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int gcd(int a, int b)</span><br><span class="line">&#123;</span><br><span class="line">    return b ? gcd(b, a % b) : a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>证明如下</p>
+<p><img src="/../images/x%20math/4.jpg" alt="img"></p>
+<h2 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h2><p>定义：（互质：两者没有除1以外的公约数）</p>
+<p><img src="/../images/x%20math/5.png" alt="img"></p>
+<p>当n为质数时 Φ(n) &#x3D; n - 1 </p>
+<p>计算公式证明：</p>
+<p>步骤：去除q1q2…qm及它们的倍数即可</p>
+<p>容斥原理：先去除1~N中所有p1p2p3p4…pm的倍数的个数，但是我们发现有些数被错误地去掉了多次，例如6会被2去除一次，被3去除一次，所以我们要把被多去除的数加回来，假设我们把pi和pj的倍数去了一次，就需要把pi * pj的倍数加回来，那假如一个数字pn是pi pj pk的倍数呢，我们分析可知，pn首先会被pi pj pk去除三次，然后会被pi * pj,pi * pk, pj * pk加回来三次，相当于没加没减，但是我们最终是要去除这个数的，于是我们要把三个质数的乘积减掉，继续分析四个数很容易得到是加上…以此类推(欧拉函数和分解式指数是没有关系的)</p>
+<p><img src="/../images/x%20math/6.jpg" alt="img"></p>
+<p>对于欧拉函数：</p>
+<p><img src="/../images/x%20math/7.jpg" alt="img"></p>
+<p><img src="/../images/x%20math/8.jpg" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">//给定一个正整数 n，求 1∼n 中每个数的欧拉函数之和</span><br><span class="line"></span><br><span class="line">//互质：gcd为1</span><br><span class="line"></span><br><span class="line">//phi[i]i有多少个质数</span><br><span class="line">//if(i mod pj == 0) 有phi[i * pj] = pj * phi[i];</span><br><span class="line">//因为phi[i] = i * (1 - 1/p1) *...*(1 - 1/pk)同时由于pj是质数而且i mod pj = 0</span><br><span class="line">//所以phi[i * pj] = pj * i * (1 - 1/p1) *...*(1 - 1/pk) = pj * phi[i]</span><br><span class="line"></span><br><span class="line">//if(i mod ph != 0) 同理，phi[i * pj] = pj * i * (1 - 1/p1) *...*(1 - 1/pk) * (1 - 1/pj)</span><br><span class="line">//phi[i * pj] = pj * phi[i] * (1 - 1/pj) = phi[i] * (pj - 1) </span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long LL;</span><br><span class="line">const int N = 1e6 + 10;</span><br><span class="line">bool st[N];</span><br><span class="line">int primes[N];</span><br><span class="line">int cnt;</span><br><span class="line">int phi[N];</span><br><span class="line"></span><br><span class="line">LL get_eulers(int n)</span><br><span class="line">&#123;</span><br><span class="line">    phi[1] = 1;//1与自己互质</span><br><span class="line">    for(int i = 2;i &lt;= n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(!st[i])</span><br><span class="line">        &#123;</span><br><span class="line">            primes[cnt++] = i;</span><br><span class="line">            phi[i] = i - 1;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int j = 0;primes[j] &lt;= n / i;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            st[primes[j] * i] = true;</span><br><span class="line">            if(i % primes[j] == 0) </span><br><span class="line">            &#123;</span><br><span class="line">                phi[i * primes[j]] = phi[i] * primes[j];</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">            phi[i * primes[j]] = phi[i] * (primes[j] - 1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    LL res = 0;</span><br><span class="line">    for(int i = 1;i &lt;= n;i++) res += phi[i];</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    cout &lt;&lt; get_eulers(n) &lt;&lt; endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="欧拉定理"><a href="#欧拉定理" class="headerlink" title="欧拉定理"></a>欧拉定理</h2><p>a ^ ψ(n) ≡ 1 (mod n)</p>
+<p>如果n为质数，那么得到费马小定理 a ^ n-1 ≡ 1 (mod n)</p>
+<h2 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h2><p>利用位运算快速求幂，把指数看成二进制数处理（如果有要求注意取模）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int qm(int a, int b, int k)</span><br><span class="line">&#123;</span><br><span class="line">    int res = 1;</span><br><span class="line">    while(b)</span><br><span class="line">    &#123;</span><br><span class="line">        if(b &amp; 1) res = res * a % k;</span><br><span class="line">        b &gt;&gt;= 1;</span><br><span class="line">        a = a * a % k; </span><br><span class="line">    &#125;</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="逆元"><a href="#逆元" class="headerlink" title="逆元"></a>逆元</h2><h3 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h3><p><img src="/../images/x%20math/niyuan.png" alt="img"></p>
+<p>b与m一定要互质，否则b如果是m的倍数，b * x(mod m) ≡ 0</p>
+<h3 id="逆元的作用："><a href="#逆元的作用：" class="headerlink" title="逆元的作用："></a>逆元的作用：</h3><p>注意 a &#x2F; b (mod m)  !&#x3D;  a(mod m) &#x2F; b(mod m)</p>
+<p>而是 a &#x2F; b (mod m)  &#x3D;&#x3D; a * b^-1 (mod m)     (b^-1指b的乘法逆元)</p>
+<p>于是我们在取模问题上可以解决除法取模的问题（同余问题）   </p>
+<p><img src="/../images/x%20math/9.jpg" alt="img"></p>
+<p>到这里我们发现求逆元问题就转换成求一个数x，使得 b * x ≡ 1 (mod m)</p>
+<p>特别地，如果m是质数，根据费马小定理，b^m-1 ≡ 1 (mod m)  &#x3D;&#x3D;&gt;  b * b^m-2 ≡ 1(mod m),那么b^m-2就是b的逆元，于是我们就可以用快速幂求解逆元</p>
+<h2 id="扩展欧几里得算法"><a href="#扩展欧几里得算法" class="headerlink" title="扩展欧几里得算法"></a>扩展欧几里得算法</h2><h3 id="裴蜀定理"><a href="#裴蜀定理" class="headerlink" title="裴蜀定理"></a>裴蜀定理</h3><p>对于任意正整数a, b，一定存在非零整数x, y，使得ax + by &#x3D; gcd(a, b)</p>
+<p>注意：等式的右边假设为d，那么d一定要满足（gcd(a, b) | b）</p>
+<p>(设d &#x3D; gcd(a, b)，那么d是a的约数，也是b的约数，利用线代知识可知d一定也是ax+by的约数)</p>
+<p>扩展欧几里得算法就可以算出来对于任意a,b，对应的x,y的具体值</p>
+<p><u>具体步骤我们可以在求最大公约数的过程中体现</u></p>
+<p><img src="/../images/x%20math/10.jpg" alt="img"></p>
+<p>有了上述推导，具体递归过程就很好写了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">//a mod b = a - (a / b)(下取整) * b </span><br><span class="line">//通过化简，可得递归过程中为by + (a % b)x = d ==&gt; ax + b(y - a / b * x) = d</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int exgcd(int a, int b, int &amp;x, int &amp;y)//ab是要辅助递归的，不要引用</span><br><span class="line">&#123;</span><br><span class="line">    if(!b) </span><br><span class="line">    &#123;</span><br><span class="line">        x = 1, y = 0;</span><br><span class="line">        return a;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    int d = exgcd(b, a % b, y, x);//同时换位置</span><br><span class="line">    y -= a / b * x;//由第二行解释</span><br><span class="line">    return d;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int T;</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    while(T--)</span><br><span class="line">    &#123;</span><br><span class="line">        int a, b, x, y;</span><br><span class="line">        scanf(&quot;%d%d&quot;, &amp;a, &amp;b);</span><br><span class="line">        exgcd(a, b, x, y);</span><br><span class="line">        printf(&quot;%d %d\n&quot;,x, y);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="线性同余方程"><a href="#线性同余方程" class="headerlink" title="线性同余方程"></a>线性同余方程</h3><p> a * x ≡ b (mod m),已知a，b，m ， 求x</p>
+<p><img src="/../images/x%20math/11.jpg" alt="img"></p>
+<p>至此，我们便将其转换为扩展欧几里得算法</p>
+<h2 id="简单博弈论（NIM游戏）"><a href="#简单博弈论（NIM游戏）" class="headerlink" title="简单博弈论（NIM游戏）"></a>简单博弈论（NIM游戏）</h2><p><img src="/../images/x%20math/gameTheory.png" alt="img"></p>
+<p>先手必胜状态：当前状态可以走到某一个(下一个)先手必败状态(下轮对手先手必败)（类似于抛给对手一个先手必败状态）<br>先手必败状态：走不到任何一个先手必败状态(下轮对手可以得到先手必胜)</p>
+<p>结论:a1^a2..^an &#x3D;&#x3D; 0 先手必败  !&#x3D; 0 先手必胜（这里全部的^都是指异或运算）</p>
+<ol>
+<li>0^0^..^0 &#x3D; 0 先手必败</li>
+<li>a1^…^an &#x3D; x !&#x3D; 0 那么我们一定可以通过减少一个数(在某个石堆中拿取一些石子)，使异或结果为0<br>证明2：<br>假设x的最高位为第k位 &#x3D; 1<br>那么a1~an中一定存在一个ai的第k位为1，且ai^k &lt; ai(严格小于(例如ai&#x3D;10101,k&#x3D;101))<br>那么我们一定可以抽取一定量石子将ai变成ai^k<br>所以原式&#x3D;a1^a2…^ai^k^ai+1^..^an &#x3D; k ^ k &#x3D; 0    QED<br>3.a1^…^an &#x3D; 0  只要操作，异或值就一定不为0<br>反证法：将ai-&gt;ai·   a1^…^ai^..an &#x3D; 0  (1)<br>a1^…^ai· ^..an &#x3D; 0  (2)<br>(1)(2)异或得到 ai^ai· &#x3D; 0  &#x3D;&#x3D;&gt; ai &#x3D; ai· 矛盾，QED</li>
+</ol>
+<p>所以先手必败(a1^a2..^an &#x3D;&#x3D; 0),因为先手操作后一定会抛给对手非0，而对手一定会抛给自己0<br>那么最终结束一定是对方抛给自己0(石堆空)</p>
+<p>代码只用求个异或就好了，略~~</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/11/04/x%20%E6%B5%85%E5%8F%91%E4%B8%80%E4%B8%8B%E5%92%AF/" rel="prev" title="持续更新中">
+      <i class="fa fa-chevron-left"></i> 持续更新中
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%9B%E8%B4%A8%E6%95%B0-%EF%BC%88%E6%9A%B4%E5%8A%9B%E6%9E%9A%E4%B8%BE%E4%B8%8D%E4%BD%9C%E8%AE%A8%E8%AE%BA%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">筛质数   （暴力枚举不作讨论）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%83%E6%B0%8F%E7%AD%9B-O-nloglogn-%E5%B7%B2%E7%BB%8F%E5%8F%8A%E5%85%B6%E6%8E%A5%E8%BF%91%E7%BA%BF%E6%80%A7"><span class="nav-number">2.1.</span> <span class="nav-text">埃氏筛  O(nloglogn) 已经及其接近线性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E7%AD%9B-O-n"><span class="nav-number">2.2.</span> <span class="nav-text">线性筛  O(n)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%A6%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">约数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%95%E9%99%A4%E6%B3%95%E6%B1%82%E6%89%80%E6%9C%89%E7%BA%A6%E6%95%B0"><span class="nav-number">3.1.</span> <span class="nav-text">试除法求所有约数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E7%BA%A6%E6%95%B0%E4%B8%AA%E6%95%B0"><span class="nav-number">3.2.</span> <span class="nav-text">求约数个数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E7%BA%A6%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="nav-number">3.3.</span> <span class="nav-text">求约数之和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0-gcd"><span class="nav-number">3.4.</span> <span class="nav-text">最大公约数  gcd</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0"><span class="nav-number">4.</span> <span class="nav-text">欧拉函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86"><span class="nav-number">5.</span> <span class="nav-text">欧拉定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E5%B9%82"><span class="nav-number">6.</span> <span class="nav-text">快速幂</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%86%E5%85%83"><span class="nav-number">7.</span> <span class="nav-text">逆元</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%EF%BC%9A"><span class="nav-number">7.1.</span> <span class="nav-text">定义：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%86%E5%85%83%E7%9A%84%E4%BD%9C%E7%94%A8%EF%BC%9A"><span class="nav-number">7.2.</span> <span class="nav-text">逆元的作用：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95"><span class="nav-number">8.</span> <span class="nav-text">扩展欧几里得算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A3%B4%E8%9C%80%E5%AE%9A%E7%90%86"><span class="nav-number">8.1.</span> <span class="nav-text">裴蜀定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%90%8C%E4%BD%99%E6%96%B9%E7%A8%8B"><span class="nav-number">8.2.</span> <span class="nav-text">线性同余方程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%8D%9A%E5%BC%88%E8%AE%BA%EF%BC%88NIM%E6%B8%B8%E6%88%8F%EF%BC%89"><span class="nav-number">9.</span> <span class="nav-text">简单博弈论（NIM游戏）</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">GONG</p>
+  <div class="site-description" itemprop="description">时光流转，愿你与珍重之人重逢</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">GONG</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
